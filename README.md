@@ -8,7 +8,7 @@ This repository contains Semester 4 practical programs grouped by subject folder
 |---|---|---|
 | [AI](AI) | Artificial Intelligence practicals (Python) | Available |
 | [DAA](DAA) | Design and Analysis of Algorithms practicals (Java) | Available |
-| [OS Lab](OS%20Lab) | Operating Systems Lab practicals | Currently empty |
+| [OS Lab](OS%20Lab) | Operating Systems Lab practicals (Java) | Available |
 
 ## AI Practicals (Python)
 
@@ -43,6 +43,29 @@ This repository contains Semester 4 practical programs grouped by subject folder
 | [DAA/Exp8_Dijkstra.java](DAA/Exp8_Dijkstra.java) | Dijkstra Shortest Path |
 | [DAA/Exp9_NQueens.java](DAA/Exp9_NQueens.java) | N-Queens |
 | [DAA/Exp10_RabinKarp.java](DAA/Exp10_RabinKarp.java) | Rabin-Karp String Matching |
+
+## OS Lab Practicals (Java)
+
+| File | Topic / Experiment |
+|---|---|
+| [OS Lab/Exp3_FCFS.java](OS%20Lab/Exp3_FCFS.java) | CPU Scheduling: FCFS |
+| [OS Lab/Exp3_SJF.java](OS%20Lab/Exp3_SJF.java) | CPU Scheduling: SJF |
+| [OS Lab/Exp3_PrioritySched.java](OS%20Lab/Exp3_PrioritySched.java) | CPU Scheduling: Priority |
+| [OS Lab/Exp3_RR.java](OS%20Lab/Exp3_RR.java) | CPU Scheduling: Round Robin |
+| [OS Lab/Exp4_BankersAlgorithm.java](OS%20Lab/Exp4_BankersAlgorithm.java) | Banker's Algorithm |
+| [OS Lab/Exp5_FirstFit.java](OS%20Lab/Exp5_FirstFit.java) | Memory Allocation: First Fit |
+| [OS Lab/Exp5_BestFit.java](OS%20Lab/Exp5_BestFit.java) | Memory Allocation: Best Fit |
+| [OS Lab/Exp6_FCFS.java](OS%20Lab/Exp6_FCFS.java) | Disk Scheduling: FCFS |
+| [OS Lab/Exp6_SSTF.java](OS%20Lab/Exp6_SSTF.java) | Disk Scheduling: SSTF |
+| [OS Lab/Exp6_SCAN.java](OS%20Lab/Exp6_SCAN.java) | Disk Scheduling: SCAN |
+| [OS Lab/Exp6_CSCAN.java](OS%20Lab/Exp6_CSCAN.java) | Disk Scheduling: C-SCAN |
+| [OS Lab/Exp6_CLOOK.java](OS%20Lab/Exp6_CLOOK.java) | Disk Scheduling: C-LOOK |
+| [OS Lab/Exp7_LOOK.java](OS%20Lab/Exp7_LOOK.java) | Disk Scheduling: LOOK |
+| [OS Lab/Exp8_Checksum.java](OS%20Lab/Exp8_Checksum.java) | Error Detection: Checksum |
+| [OS Lab/Exp8_CRC.java](OS%20Lab/Exp8_CRC.java) | Error Detection: CRC |
+| [OS Lab/Exp8_Hamming.java](OS%20Lab/Exp8_Hamming.java) | Error Detection and Correction: Hamming Code |
+| [OS Lab/Exp9_ALOHA.java](OS%20Lab/Exp9_ALOHA.java) | ALOHA Network Simulation |
+| [OS Lab/Exp9_ALOHA2.java](OS%20Lab/Exp9_ALOHA2.java) | ALOHA Network Simulation (Variant) |
 
 ## Notes
 
