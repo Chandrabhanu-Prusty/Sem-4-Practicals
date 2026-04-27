@@ -6,12 +6,11 @@ public class Exp3_RR {
         int ct[] = new int[n], tat[] = new int[n], wt[] = new int[n];
 
         Queue<Integer> q = new LinkedList<>();
-        boolean inQ[] = new boolean[n];
+        int time = 0, completed = 0;
 
-        int time = 0, done = 0;
-        q.add(0); inQ[0] = true;
+        q.add(0);
 
-        while (done < n) {
+        while (completed < n) {
             int i = q.poll();
 
             if (rt[i] > tq) {
@@ -21,15 +20,16 @@ public class Exp3_RR {
                 time += rt[i];
                 rt[i] = 0;
                 ct[i] = time;
-                done++;
+                completed++;
             }
 
             for (int j = 0; j < n; j++)
-                if (!inQ[j] && at[j] <= time && rt[j] > 0) {
-                    q.add(j); inQ[j] = true;
-                }
+                if (at[j] <= time && rt[j] > 0 && !q.contains(j))
+                    q.add(j);
 
             if (rt[i] > 0) q.add(i);
+
+            if (q.isEmpty()) time++; // handle idle time
         }
 
         float avgTAT = 0, avgWT = 0;
@@ -38,7 +38,8 @@ public class Exp3_RR {
         for (int i = 0; i < n; i++) {
             tat[i] = ct[i] - at[i];
             wt[i] = tat[i] - bt[i];
-            avgTAT += tat[i]; avgWT += wt[i];
+            avgTAT += tat[i];
+            avgWT += wt[i];
 
             System.out.println((i+1)+"\t"+at[i]+"\t"+bt[i]+"\t"+ct[i]+"\t"+tat[i]+"\t"+wt[i]);
         }

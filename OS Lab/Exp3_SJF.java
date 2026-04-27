@@ -9,11 +9,11 @@ public class Exp3_SJF {
         while (completed < n) {
             int idx = -1, min = Integer.MAX_VALUE;
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++){
                 if (!done[i] && at[i] <= time && bt[i] < min) {
                     min = bt[i]; idx = i;
                 }
-
+            }
             if (idx == -1) time++;
             else {
                 ct[idx] = time + bt[idx];

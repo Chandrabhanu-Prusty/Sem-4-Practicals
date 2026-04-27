@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Exp7_LOOK {
+public class Exp6_LOOK {
     public static void main(String[] args) {
         int[] req = {82,170,43,140,24,16,190};
         int head = 50;
