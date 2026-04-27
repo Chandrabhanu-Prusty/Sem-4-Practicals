@@ -1,5 +1,4 @@
 public class Exp10_RabinKarp {
-
     static final int D = 256, Q = 101;
 
     public static void rabinKarp(String text, String pattern) {

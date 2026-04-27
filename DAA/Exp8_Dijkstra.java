@@ -25,7 +25,6 @@ public class Exp8_Dijkstra {
                 }
             }
         }
-
         printSolution(dist);
     }
 
