@@ -4,47 +4,38 @@ graph = {
     'A': [('B', 1), ('C', 3)],
     'B': [('D', 3), ('E', 1)],
     'C': [('F', 5)],
-    'D': [],
-    'E': [],
-    'F': []
+    'D': [], 'E': [], 'F': []
 }
 
 heuristic = {
-    'A': 7,
-    'B': 6,
-    'C': 2,
-    'D': 1,
-    'E': 1,
-    'F': 0
+    'A': 7, 'B': 6, 'C': 2, 'D': 1, 'E': 1, 'F': 0
 }
 
 def greedy_bfs(start, goal):
-    open_list = []
-    # Priority queue stores (heuristic_value, node_name)
-    heapq.heappush(open_list, (heuristic[start], start))
+    pq = []
+    heapq.heappush(pq, (heuristic[start], start))
+
     parent = {start: None}
     visited = set()
 
-    while open_list:
-        _, current = heapq.heappop(open_list)
+    while pq:
+        _, curr = heapq.heappop(pq)
 
-        if current == goal:
+        if curr == goal:
             path = []
-            while current:
-                path.append(current)
-                current = parent[current]
-            return path[::-1] # Return reversed path
+            while curr:
+                path.append(curr)
+                curr = parent[curr]
+            return path[::-1]
 
-        if current in visited:
+        if curr in visited:
             continue
-        
-        visited.add(current)
+        visited.add(curr)
 
-        for neighbor, _ in graph[current]:
-            if neighbor not in visited:
-                heapq.heappush(open_list, (heuristic[neighbor], neighbor))
-                if neighbor not in parent:
-                    parent[neighbor] = current
+        for neigh, _ in graph[curr]:
+            if neigh not in visited:
+                heapq.heappush(pq, (heuristic[neigh], neigh))
+                parent.setdefault(neigh, curr)
 
     return None
 

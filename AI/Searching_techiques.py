@@ -1,20 +1,20 @@
-# Graph represented as adjacency list
+from collections import deque
+
 graph = {
-'1': ['2', '5'],
-'2': ['1','3', '4','5'],
-'3': ['2', '4', '6'],
-'4': ['2', '3', '5', '6'],
-'5': ['1', '2', '4', '6'],
-'6': ['3', '4', '5'],
+    '1': ['2', '5'],
+    '2': ['1','3', '4','5'],
+    '3': ['2', '4', '6'],
+    '4': ['2', '3', '5', '6'],
+    '5': ['1', '2', '4', '6'],
+    '6': ['3', '4', '5'],
 }
 
-# Breadth First Search (BFS)
 def bfs(graph, start, goal):
-    queue = [(start, [start])]
+    queue = deque([(start, [start])])
     visited = set()
     
     while queue:
-        node, path = queue.pop(0)
+        node, path = queue.popleft()
         if node == goal:
             return path
         
@@ -25,7 +25,6 @@ def bfs(graph, start, goal):
                     queue.append((neighbor, path + [neighbor]))
     return None
 
-# Depth First Search (DFS)
 def dfs(graph, start, goal):
     stack = [(start, [start])]
     visited = set()
@@ -37,41 +36,32 @@ def dfs(graph, start, goal):
         
         if node not in visited:
             visited.add(node)
-            for neighbor in reversed(graph[node]):
+            for neighbor in graph[node]:
                 if neighbor not in visited:
                     stack.append((neighbor, path + [neighbor]))
     return None
 
-# Depth Limited Search (DLS)
 def dls(graph, start, goal, limit):
-    def recursive_dls(node, path, depth):
+    def recursive(node, path, depth, visited):
         if node == goal:
             return path
         if depth == 0:
             return None
         
+        visited.add(node)
         for neighbor in graph[node]:
-            result = recursive_dls(neighbor, path + [neighbor], depth - 1)
-            if result:
-                return result
+            if neighbor not in visited:
+                res = recursive(neighbor, path + [neighbor], depth - 1, visited)
+                if res:
+                    return res
         return None
     
-    return recursive_dls(start, [start], limit)
+    return recursive(start, [start], limit, set())
 
-# Function to print required output format
-def display_result(algo_name, path):
-    print("\nAlgorithm:", algo_name)
-    if path:
-        print("Path Found")
-        print("Path =", path)
-    else:
-        print("Goal Not Found")
+def display(algo, path):
+    print("\nAlgorithm:", algo)
+    print("Path Found:", path if path else "No Path")
 
-# Main Execution
-start_node = '1'
-goal_node = '6'
-depth_limit = 3
-
-display_result("Breadth First Search (BFS)", bfs(graph, start_node, goal_node))
-display_result("Depth First Search (DFS)", dfs(graph, start_node, goal_node))
-display_result("Depth Limited Search (DLS)", dls(graph, start_node, goal_node, depth_limit))
+print(display("BFS", bfs(graph, '1', '6')))
+print(display("DFS", dfs(graph, '1', '6')))
+print(display("DLS", dls(graph, '1', '6', 3)))

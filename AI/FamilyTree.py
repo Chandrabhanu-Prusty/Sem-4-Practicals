@@ -1,6 +1,5 @@
 class FamilyTree:
     def __init__(self):
-        # Format: 'Name': {'gender': 'M/F', 'children': [list]}
         self.family = {
             'John': {'gender': 'M', 'children': ['Mary', 'James']},
             'Sara': {'gender': 'F', 'children': ['Mary', 'James']},
@@ -8,17 +7,15 @@ class FamilyTree:
             'James': {'gender': 'M', 'children': []},
             'Lily': {'gender': 'F', 'children': []}
         }
+
     def is_father(self, x, y):
-        return self.family.get(x, {}).get('gender') == 'M' and y in self.family.get(x, {}).get('children', [])
-    def is_mother(self, x, y):
-        return self.family.get(x, {}).get('gender') == 'F' and y in self.family.get(x, {}).get('children', [])
+        data = self.family.get(x, {})
+        return data.get('gender') == 'M' and y in data.get('children', [])
+
     def are_siblings(self, x, y):
         if x == y: return False
-        for parent, data in self.family.items():
-            if x in data['children'] and y in data['children']:
-                return True
-        return False
-# Execution
+        return any(x in p['children'] and y in p['children'] for p in self.family.values())
+
 ft = FamilyTree()
-print(f"Is John the father of Mary? {ft.is_father('John', 'Mary')}")
-print(f"Are Mary and James siblings? {ft.are_siblings('Mary', 'James')}")
+print(ft.is_father('John', 'Mary'))
+print(ft.are_siblings('Mary', 'James'))
