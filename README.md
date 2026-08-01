@@ -1,4 +1,4 @@
-﻿# Sem-4-Practicals
+﻿# Sem-4-Practical
 
 This repository contains Semester 4 practical programs grouped by subject folders.
 
