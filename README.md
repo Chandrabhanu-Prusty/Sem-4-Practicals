@@ -60,7 +60,7 @@ This repository contains Semester 4 practical programs grouped by subject folder
 | [OS Lab/Exp6_SCAN.java](OS%20Lab/Exp6_SCAN.java) | Disk Scheduling: SCAN |
 | [OS Lab/Exp6_CSCAN.java](OS%20Lab/Exp6_CSCAN.java) | Disk Scheduling: C-SCAN |
 | [OS Lab/Exp6_CLOOK.java](OS%20Lab/Exp6_CLOOK.java) | Disk Scheduling: C-LOOK |
-| [OS Lab/Exp7_LOOK.java](OS%20Lab/Exp7_LOOK.java) | Disk Scheduling: LOOK |
+| [OS Lab/Exp6_LOOK.java](OS%20Lab/Exp6_LOOK.java) | Disk Scheduling: LOOK |
 | [OS Lab/Exp8_Checksum.java](OS%20Lab/Exp8_Checksum.java) | Error Detection: Checksum |
 | [OS Lab/Exp8_CRC.java](OS%20Lab/Exp8_CRC.java) | Error Detection: CRC |
 | [OS Lab/Exp8_Hamming.java](OS%20Lab/Exp8_Hamming.java) | Error Detection and Correction: Hamming Code |
